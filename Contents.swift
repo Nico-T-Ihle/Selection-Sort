@@ -27,6 +27,7 @@ func selectionSort(list: Array<Int>) -> Array<Int>? {
         var minIndex = indexValue
        
         for i in (indexValue + 1)..<sortedList.count {
+            print("sollte 1-5: \(i)")
             if sortedList[i] < sortedList[minIndex] {
                 minIndex = i
             }
@@ -40,7 +41,28 @@ func selectionSort(list: Array<Int>) -> Array<Int>? {
     return sortedList
 }
 
+func bubbleSort(list: Array<Int>) -> Array<Int>? {
+    
+    var sortedList = list
+    
+    for index in 0..<sortedList.count {
+        
+        for i in 0..<(sortedList.count-index-1) {
+            print("i: \(i)")
+            if sortedList[i] > sortedList[i+1] {
+                
+                sortedList.swapAt(i, i+1)
+                
+            }
+        }
+        
+    }
+    
+    return sortedList
+    
+}
+
 
 var listThatShouldBeSorted = [16,24,51,3,22,11]
-var sortedList = selectionSort(list: listThatShouldBeSorted)
+var sortedList = bubbleSort(list: listThatShouldBeSorted)
 print(sortedList)
