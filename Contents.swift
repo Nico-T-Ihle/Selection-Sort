@@ -41,6 +41,12 @@ func selectionSort(list: Array<Int>) -> Array<Int>? {
     return sortedList
 }
 
+/*
+    @Info
+    Bubble Sort is a basic sorting algorithm. But in reality its not that efficient because of its time
+    complexity O(n²), which is very inefficient for large data sets.
+ */
+
 func bubbleSort(list: Array<Int>) -> Array<Int>? {
     
     var sortedList = list
@@ -50,9 +56,7 @@ func bubbleSort(list: Array<Int>) -> Array<Int>? {
         for i in 0..<(sortedList.count-index-1) {
             print("i: \(i)")
             if sortedList[i] > sortedList[i+1] {
-                
                 sortedList.swapAt(i, i+1)
-                
             }
         }
         
