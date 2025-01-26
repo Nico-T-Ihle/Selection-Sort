@@ -59,14 +59,74 @@ func bubbleSort(list: Array<Int>) -> Array<Int>? {
                 sortedList.swapAt(i, i+1)
             }
         }
-        
+    }
+    return sortedList
+}
+
+
+func fibonacciSequence(upTo n: Int) -> [Int] {
+    
+    var sequence = [0, 1]
+    
+    for _ in 2..<n {
+        let nextNumber = sequence[sequence.count - 1] + sequence[sequence.count - 2]
+        sequence.append(nextNumber)
     }
     
-    return sortedList
-    
+    return sequence
 }
+
+func isPalindrome(_ userString: String) -> Bool {
+    let characters = Array(userString.lowercased())
+    var initialIndex = 0
+    var finalIndex = characters.count - 1
+    print("finalIndex: \(finalIndex)")
+    print("characters[initialIndex]: \(characters[initialIndex])")
+    print("characters[finalIndex]: \(characters[finalIndex])")
+    while initialIndex < finalIndex {
+        if characters[initialIndex] != characters[finalIndex] {
+            return false
+        }
+        initialIndex += 1
+        finalIndex -= 1
+    }
+    return true
+}
+
+let sampleString = "radar"
+if isPalindrome(sampleString) {
+    print("\(sampleString) is a palindrome!")
+} else {
+    print("\(sampleString) is not a palindrome.")
+}
+let result = fibonacciSequence(upTo: 10)
+print(result)
+
 
 
 var listThatShouldBeSorted = [16,24,51,3,22,11]
 var sortedList = bubbleSort(list: listThatShouldBeSorted)
+
 print(sortedList)
+
+
+// How do you reverse a string? Hallo
+
+func reversString(input: String) -> String {
+    
+    var reversedString: String = ""
+    var stringIndex: Int = input.count
+    
+    for i in input {
+        print("input: \(i)")
+        reversedString = "\(i)" + reversedString
+    }
+    
+    
+    
+    return reversedString
+}
+
+var reversStringFun = reversString(input: "Hallo")
+
+print(reversStringFun)
